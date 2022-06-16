@@ -1,6 +1,8 @@
 import React from "react";
 import { HighlightCard } from "../../components/HighlightCard";
-import { Container, Header, HighlightCards, Icon, Photo, User, UserGreeting, UserInfo, UserName, UserWrapper } from "./styles";
+import { TransactionCard } from "../../components/TransactionCard";
+
+import { Container, Header, HighlightCards, Icon, Photo, User, UserGreeting, UserInfo, UserName, UserWrapper, Transactions, Title } from "./styles";
 
 export const Dashboard = () => {
   return (
@@ -45,6 +47,13 @@ export const Dashboard = () => {
         />
         
       </HighlightCards>
+
+      <Transactions>
+        <Title>Listagem</Title>
+
+        <TransactionCard />
+              
+      </Transactions>
       
     </Container>
   )
