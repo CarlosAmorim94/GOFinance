@@ -2,16 +2,30 @@ import React from "react";
 
 import { Container, Title, Amount, Footer, Category, Icon, CategoryName, Date } from "./styles";
 
+interface Category {
+  name: string;
+  icon: string;
+}
 
+interface Data {
+  title: string;
+  amount: string;
+  category: Category;
+  date: string;
+}
+interface Props {
+  data: Data
+}
 
-export const TransactionCard = () => {
+export const TransactionCard = ({ data }: Props) => {
 
 
   return (
     <Container>
-      <Title>Desenvolvimento de site</Title>
 
-      <Amount>R$ 12.000,00</Amount>
+      <Title>{data.title}</Title>
+
+      <Amount>{data.amount}</Amount>
 
       <Footer>
 
@@ -19,10 +33,10 @@ export const TransactionCard = () => {
           <Icon
             name='dollar-sign'
             type='' />
-          <CategoryName>Vendas</CategoryName>
+          <CategoryName>{data.category.name}</CategoryName>
         </Category>
 
-        <Date>13/04/2022</Date>
+        <Date>{data.date}</Date>
 
       </Footer>
 
